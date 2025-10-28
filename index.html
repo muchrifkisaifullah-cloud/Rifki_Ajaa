@@ -1,12 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pribadi Saya</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    color: white;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    padding: 15px 0;
+    z-index: 10;
+  }
+
+  nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav h1 {
+    font-size: 24px;
+    color: #00d4ff;
+    letter-spacing: 2px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #00d4ff;
+  }
+
+  section {
+    min-height: 100vh;
+    padding: 100px 10% 60px;
+  }
+
+  /* Hero Section */
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #home h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  #home p {
+    font-size: 18px;
+    max-width: 600px;
+    color: #cfd8dc;
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  #home button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    background: #00d4ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #home button:hover {
+    background: #00aacc;
+  }
+
+  /* About Section */
+  #about {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
+
+  #about h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  #about p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dfe6e9;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  /* Portfolio */
+  #portfolio {
+    text-align: center;
+  }
+
+  #portfolio h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .project {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 280px;
+    padding: 20px;
+    transition: 0.3s;
+  }
+
+  .project:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .project img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  /* Contact */
+  #contact {
+    text-align: center;
+  }
+
+  #contact h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  input, textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  button.submit {
+    background: #00d4ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button.submit:hover {
+    background: #009fc1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<header>
+  <nav>
+    <h1>Nama Anda</h1>
+    <ul>
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home">
+  <h2>Halo, Saya <span style="color:#00d4ff;">[Nama Anda]</span></h2>
+  <p>Saya seorang web developer & desainer yang bersemangat menciptakan pengalaman digital yang indah dan fungsional.</p>
+  <button onclick="scrollToSection('about')">Pelajari Lebih Lanjut</button>
+</section>
+
+<section id="about">
+  <h2>Tentang Saya</h2>
+  <p>
+    Saya memiliki keahlian dalam HTML, CSS, dan JavaScript. Saya suka memadukan desain modern dengan performa tinggi untuk membuat website yang tidak hanya menarik tapi juga responsif di semua perangkat.
+  </p>
+</section>
+
+<section id="portfolio">
+  <h2>Portofolio</h2>
+  <div class="projects">
+    <div class="project">
+      <img src="https://source.unsplash.com/400x250/?website" alt="Proyek 1">
+      <h3>Proyek 1</h3>
+      <p>Deskripsi singkat tentang proyek pertama Anda.</p>
+    </div>
+    <div class="project">
+      <img src="https://source.unsplash.com/400x250/?app" alt="Proyek 2">
+      <h3>Proyek 2</h3>
+      <p>Deskripsi singkat tentang proyek kedua Anda.</p>
+    </div>
+    <div class="project">
+      <img src="https://source.unsplash.com/400x250/?design" alt="Proyek 3">
+      <h3>Proyek 3</h3>
+      <p>Deskripsi singkat tentang proyek ketiga Anda.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontak Saya</h2>
+  <form onsubmit="return kirimPesan(event)">
+    <input type="text" placeholder="Nama Anda" required>
+    <input type="email" placeholder="Email Anda" required>
+    <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+    <button type="submit" class="submit">Kirim Pesan</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 [Nama Anda]. Semua hak dilindungi.</p>
+</footer>
+
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+function kirimPesan(e) {
+  e.preventDefault();
+  alert("Terima kasih! Pesan Anda telah terkirim.");
+}
+</script>
 
 </body>
 </html>
